@@ -1,0 +1,21 @@
+# Slidev / Node
+node_modules/
+dist/
+.vite/
+*.log
+
+# Slidev exports
+slides/*.pdf
+slides/*.pptx
+
+# MkDocs
+site/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
