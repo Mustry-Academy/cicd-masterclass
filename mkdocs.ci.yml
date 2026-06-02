@@ -1,0 +1,25 @@
+# Public-site build config. Inherits the full local config (mkdocs.yml) but
+# strips internal-only content before publishing to GitHub Pages.
+#
+# WHY a separate file: this repo is private, but a Pages site published from it
+# is PUBLIC. Instructor facilitation material and curriculum-design records
+# (CDRs) must not be served publicly. `exclude_docs` removes the files from the
+# build entirely — not just from the nav — because an un-nav'd page is still
+# served at its URL. Local `mkdocs serve` keeps using mkdocs.yml and shows all.
+#
+# Build the public site with:  mkdocs build -f mkdocs.ci.yml
+INHERIT: mkdocs.yml
+
+site_url: https://mustry-academy.github.io/cicd-masterclass/
+
+# Physically drop internal-only trees from the published artifact.
+exclude_docs: |
+  instructor/
+  design/
+
+# Learner-facing nav only (overrides the base nav, which includes Design).
+nav:
+  - Home: README.md
+  - Reference:
+      - Ignition CI/CD overview: reference/ignition-cicd-overview.md
+      - Glossary: reference/glossary.md

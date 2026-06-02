@@ -1,0 +1,51 @@
+site_name: CI/CD for Ignition — Masterclass
+site_description: Central hub for Mustry Academy's 4-day CI/CD-for-Ignition masterclass.
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: README.md
+  - Reference:
+      - Ignition CI/CD overview: reference/ignition-cicd-overview.md
+      - Glossary: reference/glossary.md
+  # Setup / Instructor / Student Handbook are .gitkeep-only today; add their
+  # pages here as content lands (a nav entry must point at a .md file, not a dir).
+  - Design:
+      - Lab dependency graph: design/lab-dependency-graph.md
+      - Content backlog: design/content-backlog.md
+      - Decisions:
+          - 0001 — Lab repos stay canonical: design/decisions/0001-lab-repos-canonical.md
+          - 0002 — MkDocs deferred (superseded): design/decisions/0002-mkdocs-deferred.md
+          - 0003 — Odoo sync via satellite: design/decisions/0003-odoo-sync-via-separate-satellite.md
+          - 0004 — MkDocs Material adopted: design/decisions/0004-mkdocs-adopted.md
+          - 0005 — GitHub Pages public build: design/decisions/0005-github-pages-public-build.md
+
+# Lab-repo docs are pulled in at build time later via mkdocs-multirepo-plugin
+# (tag-pinned, no copies in this repo — honors CDR 0001). See CDR 0004.
