@@ -10,6 +10,13 @@ slides/*.pptx
 
 # MkDocs
 site/
+.venv/
+
+# Student handbook export output
+docs/student-handbook/build/
+
+# Workspace created by tools/clone-all-labs.sh
+tools/workspace/
 
 # OS
 .DS_Store
