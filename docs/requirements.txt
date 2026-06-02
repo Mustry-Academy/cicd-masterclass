@@ -1,0 +1,9 @@
+# Docs site build dependencies. Build with:
+#   python3 -m venv .venv && source .venv/bin/activate
+#   pip install -r docs/requirements.txt
+#   mkdocs serve
+mkdocs-material>=9.5
+
+# Phase 2 — pull lab-repo docs in at build time (tag-pinned, no copies; see CDR 0004).
+# Uncomment when wiring up the multi-repo aggregation:
+# mkdocs-multirepo-plugin>=0.8
